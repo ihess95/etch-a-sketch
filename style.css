@@ -4,16 +4,20 @@
 }
 
 .bodyContainer {
+  width: 700px;
+  height: 700px;
   display: grid;
-  grid-gap: 1em;
+  grid-gap: 0px;
+  border: 1px solid #ddd;
   grid-template-rows: repeat(var(--grid-rows), 1fr);
   grid-template-columns: repeat(var(--grid-cols), 1fr);
 }
 .grid-item {
-  padding: 1em;
-  border: 1px solid #ddd;
+  margin: 0px;
+  /* border: 1px solid #ddd; */
   text-align: center;
 }
-.grid-item:hover {
+/* .grid-item:hover,
+.grid-item.active {
   background-color: gray;
-}
+} */
