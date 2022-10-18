@@ -1,5 +1,17 @@
 const container = document.querySelector("div.bodyContainer");
+const buttonContainer = document.querySelector("div.buttonContainer");
 const button = document.createElement("button");
+let cells = "";
+let x = 10;
+let y = 10;
+let randColor = Math.floor(Math.random() * 16777215).toString(16);
+button.textContent = "Adjust resolution";
+buttonContainer.appendChild(button);
+
+button.addEventListener("click", (event) => {
+  adjustResolution();
+});
+
 // container.style.width = "500px";
 // container.style.height = "auto";
 // button.textContent = "Adjust Size";
@@ -10,13 +22,25 @@ function makeGrid(rows, cols) {
   for (let c = 0; c < rows * cols; c++) {
     let cell = document.createElement("div");
     container.appendChild(cell).className = "grid-item";
-    const cells = document.querySelectorAll("div.grid-item");
+    cells = document.querySelectorAll("div.grid-item");
     cells.forEach((cells) =>
       cells.addEventListener("mouseover", () => {
-        cells.style.backgroundColor = "gray";
+        cells.style.backgroundColor = `#${randColor}`;
       })
     );
   }
 }
 
-makeGrid(20, 20);
+function adjustResolution() {
+  randColor = Math.floor(Math.random() * 16777215).toString(16);
+  x = prompt("X axis value: ");
+  y = prompt("Y axis value: ");
+  if (x > 100 || y > 100) {
+    x = prompt("Sorry, that number is too big, try x again: ");
+    y = prompt("Sorry, that number is too big, try y again: ");
+  }
+  cells.forEach((cells) => (cells.style.backgroundColor = "white"));
+  makeGrid(x, y);
+}
+
+makeGrid(x, y);

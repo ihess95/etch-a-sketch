@@ -17,6 +17,20 @@
   /* border: 1px solid #ddd; */
   text-align: center;
 }
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  background-color: blanchedalmond;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
 /* .grid-item:hover,
 .grid-item.active {
   background-color: gray;
