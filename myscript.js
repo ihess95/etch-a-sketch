@@ -2,6 +2,7 @@ const container = document.querySelector("div.bodyContainer");
 const buttonContainer = document.querySelector("div.buttonContainer");
 const button = document.createElement("button");
 const resetButton = document.createElement("button");
+const colorButton = document.createElement("button");
 let cells = "";
 let x = 10;
 let y = 10;
@@ -10,6 +11,8 @@ button.textContent = "Adjust resolution and reset";
 buttonContainer.appendChild(button);
 resetButton.textContent = "Reset";
 buttonContainer.appendChild(resetButton);
+colorButton.textContent = "Reroll color";
+buttonContainer.appendChild(colorButton);
 
 button.addEventListener("click", (event) => {
   adjustResolution();
