@@ -3,12 +3,18 @@
   --grid-rows: 1;
 }
 
+body {
+  background-color: red;
+}
+
 .bodyContainer {
   width: 700px;
   height: 700px;
   display: grid;
   grid-gap: 0px;
   border: 1px solid #ddd;
+  background-color: ghostwhite;
+  border-radius: 3px;
   grid-template-rows: repeat(var(--grid-rows), 1fr);
   grid-template-columns: repeat(var(--grid-cols), 1fr);
 }
