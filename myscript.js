@@ -1,12 +1,15 @@
 const container = document.querySelector("div.bodyContainer");
 const buttonContainer = document.querySelector("div.buttonContainer");
 const button = document.createElement("button");
+const resetButton = document.createElement("button");
 let cells = "";
 let x = 10;
 let y = 10;
 let randColor = Math.floor(Math.random() * 16777215).toString(16);
-button.textContent = "Adjust resolution";
+button.textContent = "Adjust resolution and reset";
 buttonContainer.appendChild(button);
+resetButton.textContent = "Reset";
+buttonContainer.appendChild(resetButton);
 
 button.addEventListener("click", (event) => {
   adjustResolution();
@@ -39,8 +42,12 @@ function adjustResolution() {
     x = prompt("Sorry, that number is too big, try x again: ");
     y = prompt("Sorry, that number is too big, try y again: ");
   }
-  cells.forEach((cells) => (cells.style.backgroundColor = "white"));
+  reset();
   makeGrid(x, y);
+}
+
+function reset() {
+  cells.forEach((cells) => (cells.style.backgroundColor = "white"));
 }
 
 makeGrid(x, y);
