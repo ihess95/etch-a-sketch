@@ -6,7 +6,7 @@ const colorButton = document.createElement("button");
 let cells = "";
 let x = 10;
 let y = 10;
-let randColor = Math.floor(Math.random() * 16777215).toString(16);
+let randColor = "";
 button.textContent = "Adjust resolution and reset";
 buttonContainer.appendChild(button);
 resetButton.textContent = "Reset";
@@ -31,14 +31,14 @@ function makeGrid(rows, cols) {
     cells = document.querySelectorAll("div.grid-item");
     cells.forEach((cells) =>
       cells.addEventListener("mouseover", () => {
-        cells.style.backgroundColor = `#${randColor}`;
+        cells.style.backgroundColor = `#${colorRandomizer()}`;
       })
     );
   }
 }
 
 function adjustResolution() {
-  randColor = Math.floor(Math.random() * 16777215).toString(16);
+  colorRandomizer();
   x = prompt("X axis value: ");
   y = prompt("Y axis value: ");
   if (x > 100 || y > 100) {
@@ -53,4 +53,10 @@ function reset() {
   cells.forEach((cells) => (cells.style.backgroundColor = "white"));
 }
 
+function colorRandomizer() {
+  randColor = Math.floor(Math.random() * 16777215).toString(16);
+  return randColor;
+}
+
 makeGrid(x, y);
+console.log(colorRandomizer());
