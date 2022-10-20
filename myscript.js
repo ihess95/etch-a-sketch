@@ -22,6 +22,10 @@ colorButton.addEventListener("click", (event) => {
   colorRandomizer();
 });
 
+resetButton.addEventListener("click", (event) => {
+  reset();
+});
+
 // container.style.width = "500px";
 // container.style.height = "auto";
 // button.textContent = "Adjust Size";
