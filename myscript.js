@@ -6,7 +6,7 @@ const colorButton = document.createElement("button");
 let cells = "";
 let x = 10;
 let y = 10;
-let randColor = "";
+let randColor = Math.floor(Math.random() * 16777215).toString(16);
 button.textContent = "Adjust resolution and reset";
 buttonContainer.appendChild(button);
 resetButton.textContent = "Reset";
@@ -16,6 +16,10 @@ buttonContainer.appendChild(colorButton);
 
 button.addEventListener("click", (event) => {
   adjustResolution();
+});
+
+colorButton.addEventListener("click", (event) => {
+  colorRandomizer();
 });
 
 // container.style.width = "500px";
@@ -31,7 +35,7 @@ function makeGrid(rows, cols) {
     cells = document.querySelectorAll("div.grid-item");
     cells.forEach((cells) =>
       cells.addEventListener("mouseover", () => {
-        cells.style.backgroundColor = `#${colorRandomizer()}`;
+        cells.style.backgroundColor = `#${randColor}`;
       })
     );
   }
