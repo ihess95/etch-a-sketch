@@ -67,4 +67,3 @@ function colorRandomizer() {
 }
 
 makeGrid(x, y);
-console.log(colorRandomizer());
